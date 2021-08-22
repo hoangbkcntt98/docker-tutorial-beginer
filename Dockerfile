@@ -4,10 +4,10 @@ FROM ubuntu:18.04
 LABEL maintainer="Prakhar Srivastav <prakhar@prakhar.me>"
 
 # install system-wide deps for python and node
-RUN apt-get -yqq update
-RUN apt-get -yqq install python3-pip python3-dev curl gnupg
+RUN apt-get update
+RUN apt-get -yq install python3-pip python3-dev curl gnupg
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
-RUN apt-get install -yq nodejs
+RUN apt-get -yq install nodejs
 
 # copy our application code
 ADD flask-app /opt/flask-app
